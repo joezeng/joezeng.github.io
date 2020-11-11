@@ -51,6 +51,7 @@ var attacks = {
 	h_ag24: h_ag24,
 	h_ag25: h_ag25,
 	h_ag26: h_ag26,
+	h_ag27: h_ag27,
 	h_pk2: h_pk2,
 	h_sp4: h_sp4,
 
