@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Goomy Clicker</title>
+
+	<link rel="stylesheet" href="goomyclicker.css" />
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127624903-2"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-127624903-2');
+	</script>
+	
+	<script src="goomyclicker.js"></script>
+	<script src="items.js"></script>
+	<script src="saveload.js"></script>
+	<script src="sprintf.js"></script>
+	<script src="/res/ga_links.js"></script>
+
+</head>
+
+
+<body>
+
+	<div id="container">
+
+		<img id="background" src="images/goomy_bg.jpg" />
+
+		<div id="gamebox">
+
+			<table style="width: 100%;">
+
+				<tr>
+					<td id="leftbar_c">
+						<div style="background-color: #141414; color: #e9e9e9; padding: 14px 20px; border-radius: 4px;">
+							<p style="font-size: 125%;">We're moving to <a href="https://doodle-pile.gitlab.io/" onclick="gitlab_link()" style="color: #ffd700; text-decoration: none;">Gitlab</a> now!</p>
+							<p style="margin-bottom: 0;">Here, take your save file and import it there: <br /><textarea id="savefile"></textarea></p>
+						</div>
+					</td>
+
+					<td id="centre_c" rowspan="2">
+
+					</td>
+
+					<td id="rightbar_c" rowspan="2">
+					</td>
+				</tr>
+
+			</table>
+
+		</div> <!-- gamebox -->
+
+	</div>
+
+	<script type="text/javascript">
+		load_game();
+		document.getElementById("savefile").innerText = export_save();
+	</script>
+
+</body>
+
+</html>

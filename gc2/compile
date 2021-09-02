@@ -1,0 +1,1 @@
+coffee -cj gc2.js cs/*

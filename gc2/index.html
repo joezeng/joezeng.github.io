@@ -1,0 +1,59 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width" />
+
+	<title class="lang_title">Goomy Clicker 2</title>
+	<link rel="icon" type="image/png" href="img/favicon.png" />
+
+	<link rel="stylesheet" href="style/gc2.css" />
+
+	<!-- UI libraries -->
+	<script src="lib/jquery.min.js"></script>
+	<script src="lib/jquery.qrcode.min.js"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127624903-2"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-127624903-2');
+	</script>
+	
+	<script src="/res/ga_links.js"></script>
+
+</head>
+
+<body>
+
+	<div id="gamearea">
+
+	<div id="export_save">
+		<h2>Export Save</h2>
+		<p>We've moved all the games over to Gitlab now, so exporting is mandatory.</p>
+		<p>
+			Exported save string: <input type="text" readonly="readonly" id="export_save_string" />
+		</p>
+		<p style="margin-top: 1em;">
+			QR code for mobile: <canvas id="export_qr_code" width="200" height="200" />
+		</p>
+		<p>
+			If you have any trouble importing your save on the new site, please
+			contact me at the email provided on that page.
+		</p>
+		<p style="text-align: center;">
+			<a href="https://doodle-pile.gitlab.io/" onclick="gitlab_link()"><button id="export_close">To Gitlab!</button></a>
+		</p>
+	</div>
+
+	<script>
+		document.getElementById("export_save_string").innerText = localStorage.getItem("gc2.savefile");
+		$("#export_qr_code").qrcode("gc2.savefile");
+	</script>
+
+</body>
+
+</html>
